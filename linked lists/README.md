@@ -36,5 +36,5 @@ has_next() | validate_size()
 to_string() |
 
 ## TODO:
-- [ ] Style Guide
+- [ ] [Google Style Guide](https://google.github.io/styleguide/pyguide.html)
 - [ ] Unit Tests

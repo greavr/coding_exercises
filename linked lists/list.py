@@ -76,7 +76,7 @@ def main():
         added_numbers.append(random_int)
         i -= 1
 
-    print (f"Node values: {added_numbers} ")
+    print (f"Node values: {added_numbers}")
 
     print(f"List Size: {myList.get_size()}")
 
