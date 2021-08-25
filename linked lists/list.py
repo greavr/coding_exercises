@@ -13,6 +13,9 @@ class LinkedList(object):
         return self.size
 
     def find(self, node_data_to_find):
+        if type(node_data_to_find) not in [int, float]:
+            raise TypeError("Node value to find must be int or float")
+
         current_node = self.root_node
 
         while current_node is not None:
@@ -23,17 +26,23 @@ class LinkedList(object):
             else:
                 current_node = current_node.get_next()
 
-    def add(self, node_data_to_find):
-        new_node = node (node_data=node_data_to_find, next_node=self.root_node)
+    def add(self, node_data_to_add):
+        if type(node_data_to_add) not in [int, float]:
+            raise TypeError("Node value to add must be int or float")
+            
+        new_node = node (node_data=node_data_to_add, next_node=self.root_node)
         self.root_node = new_node
         self.size += 1
 
-    def remove(self, node_data):
+    def remove(self, node_data_to_remove):
+        if type(node_data_to_remove) not in [int, float]:
+            raise TypeError("Node value to remove must be int or float")
+          
         current_node = self.root_node
         previous_node = None
 
         while current_node is not None:
-            if  current_node.get_data() == node_data:
+            if  current_node.get_data() == node_data_to_remove:
                 if previous_node is not None:
                     previous_node.set_next(current_node.get_next())
                 else:

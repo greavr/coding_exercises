@@ -1,5 +1,8 @@
 class node(object):
     def __init__(self, node_data, next_node = None):
+        if type(node_data) not in [int, float]:
+            raise TypeError("Node value must be int or float")
+
         self.node_data = node_data
         self.next_node = next_node
     
@@ -13,6 +16,9 @@ class node(object):
         return self.node_data
     
     def set_data(self, node_data):
+        if type(node_data) not in [int, float]:
+            raise TypeError("Node value must be int or float")
+
         self.node_data = node_data
     
     def has_next(self):
@@ -22,4 +28,4 @@ class node(object):
             return False
 
     def __str__(self):
-        return f'node value {self.node_data},\nnext {self.next_node}'
+        return str(self.node_data)
