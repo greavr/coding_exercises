@@ -20,8 +20,10 @@ python3 list.py
 <hr />
 
 ### Classes
-    node
-    list
+```python
+node(node_data, next_node = None)
+list(root_node = None)
+```
 
 ### Functions:
 node class | list class
@@ -33,5 +35,6 @@ set_data(data) | remove(data)
 has_next() | validate_size()
 to_string() |
 
-
-
+## TODO:
+- [ ] Style Guide
+- [ ] Unit Tests
