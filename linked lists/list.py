@@ -2,7 +2,9 @@ from node import node
 import random
 
 class LinkedList(object):
-    def __init__(self, root_node = None):
+    def __init__(self, root_node: node = None):
+        if type(root_node) != node and root_node != None:
+            raise TypeError("Root node must be node or None class")
         self.root_node = root_node
         if self.root_node:
             self.size = 1
@@ -12,10 +14,9 @@ class LinkedList(object):
     def get_size(self):
         return self.size
 
-    def find(self, node_data_to_find):
-        if type(node_data_to_find) not in [int, float]:
-            raise TypeError("Node value to find must be int or float")
-
+    def find(self, node_data_to_find: int):
+        if type(node_data_to_find) != int:
+            raise TypeError("Node data to find must be int")
         current_node = self.root_node
 
         while current_node is not None:
@@ -26,18 +27,16 @@ class LinkedList(object):
             else:
                 current_node = current_node.get_next()
 
-    def add(self, node_data_to_add):
-        if type(node_data_to_add) not in [int, float]:
-            raise TypeError("Node value to add must be int or float")
-            
+    def add(self, node_data_to_add: int):
+        if type(node_data_to_add) != int:
+            raise TypeError("Node data to add must be int")
         new_node = node (node_data=node_data_to_add, next_node=self.root_node)
         self.root_node = new_node
         self.size += 1
 
-    def remove(self, node_data_to_remove):
-        if type(node_data_to_remove) not in [int, float]:
-            raise TypeError("Node value to remove must be int or float")
-          
+    def remove(self, node_data_to_remove: int):
+        if type(node_data_to_remove) != int:
+            raise TypeError("Node data to remove must be int")
         current_node = self.root_node
         previous_node = None
 
@@ -88,5 +87,4 @@ def main():
 
     find_value = random.choice(added_numbers)
     print(f"Finding value: {find_value}: {myList.find(find_value)}")
-
 main()

@@ -7,11 +7,17 @@
 
 ## Requirements
 * *Random*
+* *Unittest*
+* *pylint*
 <hr />
 
 ## Execute Guide
 ```bash
 python3 list.py
+```
+** Run Tests **
+```bash
+python3 -m unittest discover
 ```
 <hr />
 
